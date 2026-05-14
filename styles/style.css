@@ -27,18 +27,8 @@
 }
 
 .header-container {
-  display: grid;
-
-  grid-template-columns: 1.5fr 1fr;
-
-  align-items: center;
-
-  gap: 40px;
-
   max-width: 1200px;
-
   margin: 0 auto;
-
   padding: 60px 40px;
 }
 
@@ -61,11 +51,8 @@
   font-style: normal;
   font-size: 72px;
   line-height: 1.1;
-
-  width: 100%;
-  max-width: 500px;
-
   margin: 0;
+  max-width: 380px;
 }
 
 .header-card__subtitle {
@@ -74,8 +61,6 @@
   font-style: normal;
   font-size: 10px;
   line-height: 1.6;
-
-  width: 100%;
   max-width: 500px;
 }
 
@@ -86,9 +71,7 @@
   font-style: normal;
   font-size: 15px;
   line-height: 1.7;
-
-  width: 100%;
-  max-width: 520px;
+  max-width: 420px;
 }
 
 .header-card__actions {
@@ -98,6 +81,7 @@
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 .header-card__skills {
@@ -114,6 +98,7 @@
   gap: 8px;
   color: white;
   text-decoration: none;
+  max-width: fit-content;
 }
 
 .button:hover {
@@ -156,13 +141,13 @@
   font-family: "ArchivoBlack", sans-serif;
   font-style: normal;
   font-size: 20px;
-  margin-left: 120px;
+  margin-left: 0px;
 }
 .logos {
   display: flex;
-  gap: 10px;
   justify-content: space-between;
   align-items: center;
+  gap: 20px;
   width: 100%;
 }
 
@@ -178,27 +163,28 @@
 
 .cards {
   display: flex;
-  gap: 16px;
-  font-family: "OpenSans", sans-serif;
-  font-size: 24px;
-  padding-right: 120px;
+  flex-direction: column;
+  gap: 24px;
 }
 
 .card__contenedor {
   background: #111827;
   overflow: hidden;
-
   display: flex;
   flex-direction: column;
   flex: 1;
+  max-width: 900px;
 }
 
 .card__contenedor p {
   font-family: "OpenSans-Regular", sans-serif;
-  flex-grow: 1;
   font-size: 15px;
-  padding-bottom: 20px;
-  margin-right: 18px;
+  line-height: 1.7;
+  margin: 0 20px 20px;
+}
+
+.card__contenedor h3 {
+  margin: 20px;
 }
 
 .card__images {
@@ -244,6 +230,7 @@
   display: flex;
   align-items: center;
   gap: 12px;
+  padding: 0 20px 20px;
 }
 
 .button--demo {
@@ -280,7 +267,7 @@
   font-family: "ArchivoBlack", sans-serif;
   font-style: normal;
   font-size: 20px;
-  padding: 40px 0;
+  padding: 20px 0;
 }
 
 .footer p {
@@ -318,12 +305,10 @@
 
 .social {
   display: flex;
-  gap: 40px;
-  margin-top: 10px;
   justify-content: center;
   align-items: center;
-  width: 24px;
-  height: 24px;
+  gap: 16px;
+  width: 100%;
 }
 
 .social img {
@@ -371,18 +356,23 @@
   .main__content {
     padding: 40px 30px;
   }
-
+  .main__content h2,
+  .main__proyect h2 {
+    text-align: left;
+  }
   .main__proyect {
     margin-left: 20px;
     padding: 0 30px 40px;
   }
 
   .header-card {
-    gap: 40px;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 32px;
   }
 
   .header-card__info {
-    max-width: 100%;
+    max-width: 420px;
   }
 
   .header-card__title {
@@ -405,22 +395,18 @@
   }
 
   .header-card__actions {
-    justify-content: center;
+    justify-content: flex-start;
   }
 
   .header-card__image img {
-    width: 280px;
-    height: 380px;
+    width: 180px;
+    height: 200px;
+    object-fit: cover;
   }
 
   .logos {
     flex-wrap: wrap;
     gap: 20px;
-  }
-
-  .cards {
-    flex-direction: column;
-    padding-right: 0;
   }
 
   .card__contenedor {
@@ -444,15 +430,22 @@
 }
 
 @media (max-width: 320px) {
+  .page {
+    overflow: hidden;
+  }
   .header-container,
   .main__content,
   .main__proyect {
-    margin: 0px;
+    padding: 20px;
+  }
+
+  .main__proyect {
+    margin-left: 0;
   }
 
   .header-card {
-    flex-direction: column;
-    gap: 30px;
+    flex-direction: column-reverse;
+    align-items: flex-start;
   }
 
   .header-card__title {
@@ -472,11 +465,14 @@
 
   .header-card__actions {
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
   }
 
   .button {
-    width: 100%;
+    width: fit-content;
+  }
+  .line {
+    width: 60px;
   }
 
   .header-card__image img {
@@ -487,11 +483,11 @@
   .main__content h2,
   .main__proyect h2 {
     font-size: 24px;
-    text-align: center;
+    text-align: left;
   }
 
   .logos {
-    justify-content: center;
+    justify-content: flex-start;
     gap: 16px;
   }
 
@@ -530,6 +526,7 @@
   }
 
   .social {
+    width: 100%;
     gap: 16px;
   }
 
